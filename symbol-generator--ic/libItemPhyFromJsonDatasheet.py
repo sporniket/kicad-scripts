@@ -38,18 +38,27 @@ from utils import snapToGrid
 
 # check usage
 if len(sys.argv) < 3:
-    print('Usage : libItemPhyFromFromDatasheet.py input_file output_file')
+    print('Usage : libItemPhyFromFromDatasheet.py [--passive] input_file output_file')
     exit()
     pass
 
 # parse args
 comArgs = {}
-comArgs['input']=sys.argv[1]
-comArgs['output']=sys.argv[2]
+argBase = 1
+forcePassivePins = False
+if '--passive' == sys.argv[argBase]:
+    forcePassivePins = True
+    argBase += 1
+comArgs['input']=sys.argv[argBase]
+comArgs['output']=sys.argv[argBase+1]
 
 # Using readlines()
 srcFile = open(comArgs['input'], 'r')
 srcDatasheet = json.load(srcFile)
+
+if True == forcePassivePins:
+    for pin in srcDatasheet['pins']:
+        pin['type'] = 'OPSV'
 
 # get pin organization
 chipUnit = PinsOrganizerPhysical.organize(srcDatasheet)
@@ -64,10 +73,15 @@ textPosX = -halfWidth if halfWidthPins == 0 else halfWidthPins + metrics['common
 textPosY = halfHeight + metrics['common']['margin']
 
 with open(comArgs['output'], 'w') as outfile:
-    outfile.write(SymbolWriter.fmtSectionTitle.format(srcDatasheet['meta']['name'] + ' -- Physical layout symbol'))
-    outfile.write(SymbolWriter.fmtBeginSymbol.format(srcDatasheet['meta']['name'].upper()+'_PHY',1)) # One unit for each group + the power supply (Vxx, Gnd)
+    titleSuffix = ' -- Physical layout symbol'
+    symbolSuffix = '_PHY'
+    if True == forcePassivePins:
+        titleSuffix = ' -- Socket layout symbol'
+        symbolSuffix = '_SOCKET'
+    outfile.write(SymbolWriter.fmtSectionTitle.format(srcDatasheet['meta']['name'] + titleSuffix))
+    outfile.write(SymbolWriter.fmtBeginSymbol.format(srcDatasheet['meta']['name'].upper()+symbolSuffix,1)) # One unit for each group + the power supply (Vxx, Gnd)
     if 'aliases' in srcDatasheet['meta']:
-        outfile.write(SymbolWriter.fmtAlias.format(' '.join([a.upper() + '_PHY' for a in srcDatasheet['meta']['aliases']])))
+        outfile.write(SymbolWriter.fmtAlias.format(' '.join([a.upper() + symbolSuffix for a in srcDatasheet['meta']['aliases']])))
 
     outfile.write(SymbolWriter.fmtField.format(0,srcDatasheet['meta']['reference'], textPosX , textPosY + 100, 'NN'))
     outfile.write(SymbolWriter.fmtField.format(1,srcDatasheet['meta']['name'].upper()+'_PHY', textPosX , textPosY , 'NB'))

@@ -69,8 +69,8 @@ halfWidth = int(halfValues['halfWidth'])
 halfHeight = int(halfValues['halfHeight'])
 halfWidthPins = int(halfValues['halfWidthPins'])
 halfHeightPins = int(halfValues['halfHeightPins'])
-textPosX = -halfWidth if halfWidthPins == 0 else halfWidthPins + metrics['common']['margin']
-textPosY = halfHeight + metrics['common']['margin']
+textPosX = halfValues['baseTextX']
+textPosY = halfValues['baseTextY']
 
 with open(comArgs['output'], 'w') as outfile:
     titleSuffix = ' -- Physical layout symbol'

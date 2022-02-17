@@ -45,6 +45,14 @@ class ChipSymbolUnit:
         self.bottom = RailOfPins()
         self.left = RailOfPins()
         self.right = RailOfPins()
+        self.metrics = {
+            'halfWidth':0,
+            'halfHeight':0,
+            'halfWidthPins':0,
+            'halfHeightPins':0,
+            'baseTextX':0,
+            'baseTextY':0
+        }
 
     def appendVertically(self,leftGroup,rightGroup):
         """
@@ -60,7 +68,7 @@ class ChipSymbolUnit:
 
     def appendHorizontally(self,topGroup,bottomGroup):
         """
-        Each provided group is appended to the corresponding rail, then the rail with the lowest count of items is padded to match the size of the other rail.
+        Each provided group is appended to the corresponding rail.
         """
         self.top.pushPinGroup(topGroup)
         self.bottom.pushPinGroup(bottomGroup)
@@ -82,12 +90,22 @@ class ChipSymbolUnit:
         widthClearance = max(self.left.width, self.right.width)
         halfWidth = halfWidthPins + snapToGrid(widthClearance * metrics['font']['glyphWidthLastDecile'] + metrics['common']['margin'],50)
 
-        return {
+        #snap to ints
+        halfWidth = int(halfWidth)
+        halfHeight = int(halfHeight)
+        halfWidthPins = int(halfWidthPins)
+        halfHeightPins = int(halfHeightPins)
+
+        self.metrics = {
             'halfWidth':halfWidth,
             'halfHeight':halfHeight,
             'halfWidthPins':halfWidthPins,
-            'halfHeightPins':halfHeightPins
+            'halfHeightPins':halfHeightPins,
+            'baseTextX':-halfWidth if halfWidthPins == 0 else halfWidthPins + metrics['common']['margin'],
+            'baseTextY':halfHeight + metrics['common']['margin']
         }
+
+        return self.metrics
 
     def output(self,output,pinWriter,metrics,deltaX,deltaY,halfWidth,halfHeight,halfWidthPins,halfHeightPins,unitIndex):
         """

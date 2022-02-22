@@ -79,7 +79,7 @@ with open(comArgs['output'], 'w') as outfile:
         titleSuffix = ' -- Socket layout symbol'
         symbolSuffix = '_SOCKET'
     outfile.write(SymbolWriter.fmtSectionTitle.format(srcDatasheet['meta']['name'] + titleSuffix))
-    outfile.write(SymbolWriter.fmtBeginSymbol.format(srcDatasheet['meta']['name'].upper()+symbolSuffix,1)) # One unit for each group + the power supply (Vxx, Gnd)
+    outfile.write(SymbolWriter.fmtBeginSymbol.format(srcDatasheet['meta']['name'].upper()+symbolSuffix,1))
     if 'aliases' in srcDatasheet['meta']:
         outfile.write(SymbolWriter.fmtAlias.format(' '.join([a.upper() + symbolSuffix for a in srcDatasheet['meta']['aliases']])))
 

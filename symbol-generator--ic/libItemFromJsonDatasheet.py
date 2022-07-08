@@ -294,9 +294,9 @@ halfWidthPwr=int((sectionPwr['size']-1)* metrics['font']['line-height'] / 2 + me
 halfWidth=int(metrics['font']['glyphWidthLastDecile'] * totalMinimalWidth / 2 + halfWidthPwr)
 halfWidth += 50 - (halfWidth % 50) # snap to grid
 pinStartH=halfWidth + 300
-halfHeight=int(metrics['font']['line-height'] * totalLineHeight / 2 + metrics['common']['margin'])
-halfHeight += 50 - (halfHeight % 50)
-ySection = int(halfHeight - metrics['common']['margin'] / 2)
+ySection=int(metrics['font']['line-height'] * (totalLineHeight - 1) / 2)
+ySection += 50 - (ySection % 50) # snap to grid
+halfHeight = ySection + metrics['common']['margin']
 pinStartV=halfHeight + 300
 
 

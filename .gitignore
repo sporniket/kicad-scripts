@@ -1,3 +1,7 @@
 # python artefact
 *.pyc
 tmp
+
+# files to keep local
+tmp.*
+sym-lib-table

@@ -112,8 +112,14 @@ def dumpJson(obj,title):
     print('================================')
 
 groupInputs = collectGroupsBySameQualifier(1, groupsRanked, groupsUnranked)
+groupInputs.extend(collectGroupsBySameQualifier(101, groupsRanked, groupsUnranked))
+
 groupOutputs = collectGroupsBySameQualifier(10, groupsRanked, groupsUnranked)
+groupOutputs.extend(collectGroupsBySameQualifier(110, groupsRanked, groupsUnranked))
+
 groupMixeds = collectGroupsBySameQualifier(11, groupsRanked, groupsUnranked)
+groupMixeds.extend(collectGroupsBySameQualifier(111, groupsRanked, groupsUnranked))
+
 groupBidis = collectGroupsBySameQualifier(100, groupsRanked, groupsUnranked)
 
 # fill sections of pins

@@ -1,0 +1,185 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+#
+# tmp/pal20r6.symbol
+#
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
+# PAL_circuits_12_inputs,_6_registered_3-states_outputs,_2_GPIOs,_DIP -- Single unit symbol
+#
+DEF PAL_CIRCUITS_12_INPUTS,_6_REGISTERED_3-STATES_OUTPUTS,_2_GPIOS,_DIP U 0 50 Y Y 1 L N
+ALIAS PAL20R6
+F0 "U" -350 1550 50 H V L TNN
+F1 "PAL_circuits_12_inputs,_6_registered_3-states_outputs,_2_GPIOs,_DIP" -350 1450 50 H V L TNB
+F2 "Package_DIP:DIP-24_W7.62mm_LongPads" -350 1650 50 H I L TNB
+F3 "https://www.ti.com/lit/ds/symlink/tibpal20r4-20m.pdf" -350 1750 50 H I L TNN
+DRAW
+S -350 1350 350 -1350 0 0 10 f
+X CLK 1 -650 1300 300 R 50 50 0 0 I 
+X ~OE~ 13 -650 1200 300 R 50 50 0 0 I 
+X I11 23 -650 1000 300 R 50 50 0 0 I 
+X I10 14 -650 900 300 R 50 50 0 0 I 
+X I9 11 -650 800 300 R 50 50 0 0 I 
+X I8 10 -650 700 300 R 50 50 0 0 I 
+X I7 9 -650 600 300 R 50 50 0 0 I 
+X I6 8 -650 500 300 R 50 50 0 0 I 
+X I5 7 -650 400 300 R 50 50 0 0 I 
+X I4 6 -650 300 300 R 50 50 0 0 I 
+X I3 5 -650 200 300 R 50 50 0 0 I 
+X I2 4 -650 100 300 R 50 50 0 0 I 
+X I1 3 -650 0 300 R 50 50 0 0 I 
+X I0 2 -650 -100 300 R 50 50 0 0 I 
+X IO7 15 650 -300 300 L 50 50 0 0 B 
+X Q6 16 650 -400 300 L 50 50 0 0 T 
+X Q5 17 650 -500 300 L 50 50 0 0 T 
+X Q4 18 650 -600 300 L 50 50 0 0 T 
+X Q3 19 650 -700 300 L 50 50 0 0 T 
+X Q2 20 650 -800 300 L 50 50 0 0 T 
+X Q1 21 650 -900 300 L 50 50 0 0 T 
+X IO0 22 650 -1000 300 L 50 50 0 0 B 
+X VCC 24 0 1650 300 D 50 50 0 0 W 
+X GND 12 0 -1650 300 U 50 50 0 0 W 
+ENDDRAW
+ENDDEF
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
+# PAL_circuits_12_inputs,_6_registered_3-states_outputs,_2_GPIOs,_DIP -- Multiple units symbol
+#
+DEF PAL_CIRCUITS_12_INPUTS,_6_REGISTERED_3-STATES_OUTPUTS,_2_GPIOS,_DIP_MU U 0 50 Y Y 4 L N
+ALIAS PAL20R6_mu
+F0 "U" -500 300 50 H V L TNN
+F1 "PAL_circuits_12_inputs,_6_registered_3-states_outputs,_2_GPIOs,_DIP_mu_mu" -500 200 50 H V L TNB
+F2 "Package_DIP:DIP-24_W7.62mm_LongPads" -500 400 50 H I L TNN
+F3 "https://www.ti.com/lit/ds/symlink/tibpal20r4-20m.pdf" -500 500 50 H I L TNN
+DRAW
+#
+# --- --- --- ---
+# Control signals
+#
+T 0 -500 100 50 1 1 0 "Control signals" Normal 0 L T
+S -150 0 150 -300 1 0 10 f
+X CLK 1 -450 -100 300 R 50 50 1 0 I 
+X ~OE~ 13 -450 -200 300 R 50 50 1 0 I 
+#
+# --- --- --- ---
+# Input ports
+#
+T 0 -500 100 50 1 2 0 "Input ports" Normal 0 L T
+S -150 0 150 -1300 2 0 10 f
+X I11 23 -450 -100 300 R 50 50 2 0 I 
+X I10 14 -450 -200 300 R 50 50 2 0 I 
+X I9 11 -450 -300 300 R 50 50 2 0 I 
+X I8 10 -450 -400 300 R 50 50 2 0 I 
+X I7 9 -450 -500 300 R 50 50 2 0 I 
+X I6 8 -450 -600 300 R 50 50 2 0 I 
+X I5 7 -450 -700 300 R 50 50 2 0 I 
+X I4 6 -450 -800 300 R 50 50 2 0 I 
+X I3 5 -450 -900 300 R 50 50 2 0 I 
+X I2 4 -450 -1000 300 R 50 50 2 0 I 
+X I1 3 -450 -1100 300 R 50 50 2 0 I 
+X I0 2 -450 -1200 300 R 50 50 2 0 I 
+#
+# --- --- --- ---
+# Output ports or IO ports
+#
+T 0 -500 100 50 1 3 0 "Output ports or IO ports" Normal 0 L T
+S -150 0 150 -900 3 0 10 f
+X IO7 15 450 -100 300 L 50 50 3 0 B 
+X Q6 16 450 -200 300 L 50 50 3 0 T 
+X Q5 17 450 -300 300 L 50 50 3 0 T 
+X Q4 18 450 -400 300 L 50 50 3 0 T 
+X Q3 19 450 -500 300 L 50 50 3 0 T 
+X Q2 20 450 -600 300 L 50 50 3 0 T 
+X Q1 21 450 -700 300 L 50 50 3 0 T 
+X IO0 22 450 -800 300 L 50 50 3 0 B 
+#
+# --- --- --- ---
+# Power supply
+#
+T 0 -500 100 50 1 4 0 "Power supply" Normal 0 L T
+S -200 0 200 -200 4 0 10 f
+X VCC 24 -500 -100 300 R 50 50 4 0 W 
+X GND 12 100 -500 300 U 50 50 4 0 W 
+ENDDRAW
+ENDDEF
+#
+# tmp/pal20r6.phy.symbol
+#
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
+# PAL_circuits_12_inputs,_6_registered_3-states_outputs,_2_GPIOs,_DIP -- Physical layout symbol
+#
+DEF PAL_CIRCUITS_12_INPUTS,_6_REGISTERED_3-STATES_OUTPUTS,_2_GPIOS,_DIP_PHY U 0 50 Y Y 1 L N
+ALIAS PAL20R6_PHY
+F0 "U" -300 850 50 H V L TNN
+F1 "PAL_CIRCUITS_12_INPUTS,_6_REGISTERED_3-STATES_OUTPUTS,_2_GPIOS,_DIP_PHY" -300 750 50 H V L TNB
+F2 "Package_DIP:DIP-24_W7.62mm_LongPads" -300 950 50 H I L TNN
+F3 "https://www.ti.com/lit/ds/symlink/tibpal20r4-20m.pdf" -300 1050 50 H I L TNN
+DRAW
+S -300 650 300 -650 0 0 10 f
+X CLK 1 -600 550 300 R 50 50 0 0 I 
+X I0 2 -600 450 300 R 50 50 0 0 I 
+X I1 3 -600 350 300 R 50 50 0 0 I 
+X I2 4 -600 250 300 R 50 50 0 0 I 
+X I3 5 -600 150 300 R 50 50 0 0 I 
+X I4 6 -600 50 300 R 50 50 0 0 I 
+X I5 7 -600 -50 300 R 50 50 0 0 I 
+X I6 8 -600 -150 300 R 50 50 0 0 I 
+X I7 9 -600 -250 300 R 50 50 0 0 I 
+X I8 10 -600 -350 300 R 50 50 0 0 I 
+X I9 11 -600 -450 300 R 50 50 0 0 I 
+X GND 12 -600 -550 300 R 50 50 0 0 W 
+X VCC 24 600 550 300 L 50 50 0 0 W 
+X I11 23 600 450 300 L 50 50 0 0 I 
+X IO0 22 600 350 300 L 50 50 0 0 B 
+X Q1 21 600 250 300 L 50 50 0 0 T 
+X Q2 20 600 150 300 L 50 50 0 0 T 
+X Q3 19 600 50 300 L 50 50 0 0 T 
+X Q4 18 600 -50 300 L 50 50 0 0 T 
+X Q5 17 600 -150 300 L 50 50 0 0 T 
+X Q6 16 600 -250 300 L 50 50 0 0 T 
+X IO7 15 600 -350 300 L 50 50 0 0 B 
+X I10 14 600 -450 300 L 50 50 0 0 I 
+X ~OE~ 13 600 -550 300 L 50 50 0 0 I 
+ENDDRAW
+ENDDEF
+#
+# tmp/pal20r6.socket.symbol
+#
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
+# PAL_circuits_12_inputs,_6_registered_3-states_outputs,_2_GPIOs,_DIP -- Socket layout symbol
+#
+DEF PAL_CIRCUITS_12_INPUTS,_6_REGISTERED_3-STATES_OUTPUTS,_2_GPIOS,_DIP_SOCKET U 0 50 Y Y 1 L N
+ALIAS PAL20R6_SOCKET
+F0 "U" -300 850 50 H V L TNN
+F1 "PAL_CIRCUITS_12_INPUTS,_6_REGISTERED_3-STATES_OUTPUTS,_2_GPIOS,_DIP_PHY" -300 750 50 H V L TNB
+F2 "Package_DIP:DIP-24_W7.62mm_LongPads" -300 950 50 H I L TNN
+F3 "https://www.ti.com/lit/ds/symlink/tibpal20r4-20m.pdf" -300 1050 50 H I L TNN
+DRAW
+S -300 650 300 -650 0 0 10 f
+X CLK 1 -600 550 300 R 50 50 0 0 P 
+X I0 2 -600 450 300 R 50 50 0 0 P 
+X I1 3 -600 350 300 R 50 50 0 0 P 
+X I2 4 -600 250 300 R 50 50 0 0 P 
+X I3 5 -600 150 300 R 50 50 0 0 P 
+X I4 6 -600 50 300 R 50 50 0 0 P 
+X I5 7 -600 -50 300 R 50 50 0 0 P 
+X I6 8 -600 -150 300 R 50 50 0 0 P 
+X I7 9 -600 -250 300 R 50 50 0 0 P 
+X I8 10 -600 -350 300 R 50 50 0 0 P 
+X I9 11 -600 -450 300 R 50 50 0 0 P 
+X GND 12 -600 -550 300 R 50 50 0 0 P 
+X VCC 24 600 550 300 L 50 50 0 0 P 
+X I11 23 600 450 300 L 50 50 0 0 P 
+X IO0 22 600 350 300 L 50 50 0 0 P 
+X Q1 21 600 250 300 L 50 50 0 0 P 
+X Q2 20 600 150 300 L 50 50 0 0 P 
+X Q3 19 600 50 300 L 50 50 0 0 P 
+X Q4 18 600 -50 300 L 50 50 0 0 P 
+X Q5 17 600 -150 300 L 50 50 0 0 P 
+X Q6 16 600 -250 300 L 50 50 0 0 P 
+X IO7 15 600 -350 300 L 50 50 0 0 P 
+X I10 14 600 -450 300 L 50 50 0 0 P 
+X ~OE~ 13 600 -550 300 L 50 50 0 0 P 
+ENDDRAW
+ENDDEF
+#
+#End Library
